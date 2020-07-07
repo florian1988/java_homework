@@ -37,8 +37,9 @@ public class ApiTest {
 
                     if (child.getNodeName() == "temperature"){
                         String temperature = child.getAttributes().getNamedItem("value").getNodeValue();
-
-                        System.out.println(timestamp + ": Kelvin: " + temperature);
+                        Float number = Float.parseFloat(temperature);
+                        float now = number - 271;
+                        System.out.println(timestamp + ": Celsius: " + now);
                     }
 
                     if(child.getNodeName() == "clouds"){
